@@ -1,0 +1,8 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+  height: 80vh;
+}
+.NavBar {
+  height: 80vh; /* Prevents the NavBar from shrinking */
+}
