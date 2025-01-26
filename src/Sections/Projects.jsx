@@ -3,6 +3,8 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
+import { projectData } from "../constants";
+import { ProjectTable } from "../Tables";
 const Projects = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
@@ -87,104 +89,7 @@ const Projects = () => {
           />
         </form>
       </div>
-      <div>
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg bg-white mt-1.5 mb-1.5">
-          <table className="w-full text-sm text-left rtl:text-right text-gray-900 dark:text-gray-400 bg-white">
-            <thead className="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-100 dark:text-gray-900">
-              <tr>
-                <th scope="col" className="px-6 py-3">
-                  Project Name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Status
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Progress
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Start Date
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  End Date
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="odd:bg-white odd:dark:bg-gray-100 even:bg-gray-50 even:dark:bg-gray-100 border-b dark:border-gray-700 border-gray-200 text-gray-800">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                  Green Valley Complex <br />{" "}
-                  <span className="font-light">Residential Project</span>
-                </th>
-                <td className="px-6 py-4 text-green-800 ">
-                  <span className="bg-green-300 rounded-3xl p-0.5">
-                    In Progress
-                  </span>
-                </td>
-                <td className="px-6 py-4">
-                  {" "}
-                  <span className="text-sm font-medium text-gray-500">75%</span>
-                  <div className="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
-                    <div className="bg-blue-600 h-2.5 rounded-full w-[75%]"></div>
-                  </div>
-                </td>
-                <td className="px-6 py-4">01 Jun 2023</td>
-                <td className="px-6 py-4">31 Dec 2023</td>
-                <td className="px-6  py-4">
-                  <a
-                    href="#"
-                    className="font-medium mr-2 text-blue-600 dark:text-blue-500 hover:underline">
-                    Edit
-                  </a>
-                  <a
-                    href="#"
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                    View
-                  </a>
-                </td>
-              </tr>
-              <tr className="odd:bg-white odd:dark:bg-gray-100 even:bg-gray-50 even:dark:bg-gray-100 border-b dark:border-gray-700 border-gray-200 text-gray-800">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                  Green Valley Complex <br />{" "}
-                  <span className="font-light">Residential Project</span>
-                </th>
-                <td className="px-6 py-4 text-amber-900">
-                  <span className="bg-amber-300 rounded-3xl p-0.5">
-                    On Hold
-                  </span>
-                </td>
-                <td className="px-6 py-4">
-                  {" "}
-                  <span className="text-sm font-medium text-gray-500">45%</span>
-                  <div className="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
-                    <div className="bg-blue-600 h-2.5 rounded-full w-[45%]"></div>
-                  </div>
-                </td>
-                <td className="px-6 py-4">15 May 2023</td>
-                <td className="px-6 py-4">30 Nov 2023</td>
-                <td className="px-6  py-4">
-                  <a
-                    href="#"
-                    className="font-medium mr-2 text-blue-600 dark:text-blue-500 hover:underline">
-                    Edit
-                  </a>
-                  <a
-                    href="#"
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                    View
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ProjectTable data={projectData} />
       <div className="bg-white pt-2 pb-2 flex mt-1.5 items-center justify-between">
         {/* Help text */}
         <span className="text-sm text-gray-700">

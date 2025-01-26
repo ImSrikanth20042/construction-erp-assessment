@@ -1,6 +1,6 @@
 @import "tailwindcss";
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth none;
   height: 80vh;
 }
 .NavBar {
